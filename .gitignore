@@ -1,0 +1,12 @@
+# Adhoc testing scripts
+main.py
+
+# Python environment
+venv/
+*.pyc
+__pycache__/
+
+# Setup.py
+/dist/
+/*egg-info
+/build/

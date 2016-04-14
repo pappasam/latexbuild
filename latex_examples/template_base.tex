@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+
+\title{\BLOCK{block title}\BLOCK{endblock}}
+\author{\vspace{-5ex}}
+\date{\vspace{-5ex}}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+
+This is an example document. \BLOCK{block introduction}\BLOCK{endblock}
+
+\section*{List of cool things}
+
+This contains an ordered list of cool things that were passed as a python list.
+
+\begin{enumerate}
+  %- for i in listvar
+  \item \VAR{i}
+  %- endfor
+\end{enumerate}
+
+This contains an unordered list of the same cool things that were passed as a python list.
+
+\begin{itemize}
+  %- for i in listvar
+  \item \VAR{i}
+  %- endfor
+\end{itemize}
+
+\section*{Conclusion}
+
+You can do a lot with Jinja2 + Latex, and latexbuild makes all this easy.
+
+\end{document}

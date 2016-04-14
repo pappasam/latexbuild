@@ -1,0 +1,3 @@
+include LICENSE.txt
+include README.rst
+recursive_include latex_examples *
