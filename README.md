@@ -132,7 +132,8 @@ PATH_OUTPUT_HTML = "/path/to/your/output/directory/MYOUTPUTFILE.html"
 build_pdf(PATH_JINJA2, PATH_TEMPLATE_RELATIVE_TO_PATH_JINJA2, PATH_OUTPUT_PDF)
 build_html(PATH_JINJA2, PATH_TEMPLATE_RELATIVE_TO_PATH_JINJA2, PATH_OUTPUT_HTML)
 
-# If you just want the rendered template's text in a python variable, do the following (assuming you have no variables to pass):
+# If you just want the rendered template's text in a python variable,
+# do the following (assuming you have no variables to pass):
 render_latex_template(PATH_JINJA2, PATH_TEMPLATE_RELATIVE_TO_PATH_JINJA2)
 
 # If your template renders Jinja2 variables, most interfaces provide
