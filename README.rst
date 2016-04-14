@@ -14,6 +14,24 @@ components:
 1. Rendering Jinaj2 templates for Latex
 2. Compiling the rendered template with Latex
 
+Installation
+------------
+
+This project is available at https://pypi.python.org/pypi/latexbuild and
+may be installed with pip. I strongly recommend the usage of a
+virtualenvironment.
+
+.. code:: bash
+
+    # Create a virtual environment
+    virtualenv -p python3.4 venv
+
+    # Source the virtual environment
+    source venv/bin/activate
+
+    # Install latexbuild in the virtual environment
+    pip install latexbuild
+
 Rendering Jinja2 templates for Latex
 ------------------------------------
 
@@ -165,11 +183,10 @@ command line arguments you wish to use. Please see the source file
 latexbuild/build.py and read the LatexBuild class's documentation for
 more information.
 
-Supported systems
------------------
+Supported / tested systems
+--------------------------
 
-1. Tried only on Python 3.4
-2. Tried only on Linux Mint 17.3
+Python 3, Linux
 
 Written by
 ----------

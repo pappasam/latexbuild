@@ -5,6 +5,21 @@ This is a recent effort at writing a very light Latex build wrapper for Python 3
 1. Rendering Jinaj2 templates for Latex
 1. Compiling the rendered template with Latex
 
+## Installation
+
+This project is available at https://pypi.python.org/pypi/latexbuild and may be installed with pip. I strongly recommend the usage of a virtualenvironment.
+
+```bash
+# Create a virtual environment
+virtualenv -p python3.4 venv
+
+# Source the virtual environment
+source venv/bin/activate
+
+# Install latexbuild in the virtual environment
+pip install latexbuild
+```
+
 ## Rendering Jinja2 templates for Latex
 
 Latex is a great typesetting engine for large, complex projects. However, its native build tools lack a straightforward templating engine where multiple people can collaborate on a similar document. For example, imagine a scenario where five professors in the same department need to create a course syllabus. Grading requirements may be standardized at the department level, which individual lessons are up to the professors. If course syllabuses were created using Jinja2 templating and Latex, the department could create a base template that listed the department standards and ask the professors to extend the base template for each course's syllabus. That way, the professors need not worry about cross-course content or department-wide formatting requirements: these would be handled by the base template.
@@ -134,10 +149,9 @@ render_latex_template(
 
 For more complex builds, the system is designed to accept whatever command line arguments you wish to use. Please see the source file latexbuild/build.py and read the LatexBuild class's documentation for more information.
 
-## Supported systems
+## Supported / tested systems
 
-1. Tried only on Python 3.4
-1. Tried only on Linux Mint 17.3
+Python 3, Linux
 
 ## Written by
 
