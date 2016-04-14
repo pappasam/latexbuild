@@ -18,8 +18,8 @@ Installation
 ------------
 
 This project is available at https://pypi.python.org/pypi/latexbuild and
-may be installed with pip. I strongly recommend the usage of a
-virtualenvironment.
+may be installed with pip. I strongly recommend the usage of a virtual
+environment.
 
 .. code:: bash
 
@@ -55,7 +55,7 @@ Assume the department saves the following content in *template.tex*:
     % FILENAME: template.tex
     \documentclass[12pt]{article}
 
-    \title{Economics Departmnt: \BLOCK{block title}\BLOCK{endblock}}
+    \title{Economics Department: \BLOCK{block title}\BLOCK{endblock}}
     \author{\vspace{-5ex}}
     \date{\vspace{-5ex}}
 
@@ -75,7 +75,7 @@ Assume the department saves the following content in *template.tex*:
 
     \end{document}
 
-Now that the temlate has been created, the accounting professor can
+Now that the template has been created, the accounting professor can
 create his syllabus in the following way:
 
 .. code:: tex

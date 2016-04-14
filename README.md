@@ -7,7 +7,7 @@ This is a recent effort at writing a very light Latex build wrapper for Python 3
 
 ## Installation
 
-This project is available at https://pypi.python.org/pypi/latexbuild and may be installed with pip. I strongly recommend the usage of a virtualenvironment.
+This project is available at https://pypi.python.org/pypi/latexbuild and may be installed with pip. I strongly recommend the usage of a virtual environment.
 
 ```bash
 # Create a virtual environment
@@ -30,7 +30,7 @@ Assume the department saves the following content in *template.tex*:
 % FILENAME: template.tex
 \documentclass[12pt]{article}
 
-\title{Economics Departmnt: \BLOCK{block title}\BLOCK{endblock}}
+\title{Economics Department: \BLOCK{block title}\BLOCK{endblock}}
 \author{\vspace{-5ex}}
 \date{\vspace{-5ex}}
 
@@ -51,7 +51,7 @@ Professors shouldn't have to think about this.
 \end{document}
 ```
 
-Now that the temlate has been created, the accounting professor can create his syllabus in the following way:
+Now that the template has been created, the accounting professor can create his syllabus in the following way:
 
 ```tex
 %- extends "template.tex"
