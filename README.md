@@ -94,7 +94,8 @@ This is a boring, statistics-specific block
 Most Jinja2 templating functionality is supported, using the same syntax alterations as the latex python package referenced in this README's introduction. For example, if you would like to loop over values and place them in a Latex list, you may use the following code.
 
 ```tex
-This snipped provides an ordered list over the list variable passed from Python:
+This snippet provides an ordered list displaying the
+list variable passed from Python:
 
 \begin{enumerate}
   %- for variable in variable_list
@@ -102,7 +103,8 @@ This snipped provides an ordered list over the list variable passed from Python:
   %- endfor
 \end{enumerate}
 
-Alternatively, snippet provides an unordered list over the list variable passed from Python:
+Alternatively, this snippet provides an unordered list
+displaying the list variable passed from Python:
 
 \begin{itemize}
   %- for variable in variable_list

@@ -124,7 +124,8 @@ place them in a Latex list, you may use the following code.
 
 .. code:: tex
 
-    This snipped provides an ordered list over the list variable passed from Python:
+    This snippet provides an ordered list displaying the
+    list variable passed from Python:
 
     \begin{enumerate}
       %- for variable in variable_list
@@ -132,7 +133,8 @@ place them in a Latex list, you may use the following code.
       %- endfor
     \end{enumerate}
 
-    Alternatively, snippet provides an unordered list over the list variable passed from Python:
+    Alternatively, this snippet provides an unordered list
+    displaying the list variable passed from Python:
 
     \begin{itemize}
       %- for variable in variable_list
