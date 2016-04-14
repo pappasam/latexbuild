@@ -110,7 +110,10 @@ class LatexBuild(object):
         :return: STR template text that is ultimately rendered
         '''
         assertions.has_file_extension(path_outfile, '.pdf')
-        return self.run_latex(['pdflatex'], path_outfile)
+        return self.run_latex(
+                ['pdflatex', '-interaction', 'nonstopmode'],
+                path_outfile,
+                )
 
     def build_html(self, path_outfile):
         '''Helper function for building a basic html file
