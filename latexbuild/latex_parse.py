@@ -21,12 +21,12 @@ ESCAPE_CHARS = [r'\&', '%', r'\$', '#', '_', r'\{', r'\}', '~', r'\^', ]
 # 2) the first character is NOT a backslash ( "\" )
 # 3) the second character is one of the latex escape characters
 REGEX_ESCAPE_CHARS = [
-        (re.compile(r"(?=[^\\])" + i), r"\\" + i.replace('\\', ''))
+        (re.compile(r"(?<=[^\\])" + i), r"\\" + i.replace('\\', ''))
         for i in ESCAPE_CHARS
         ]
 
 # Place escape characters in [] for "match any character" regex
-ESCAPE_CHARS_OR = r'[{}\\]'.format(ESCAPE_CHARS)
+ESCAPE_CHARS_OR = r'[{}\\]'.format(''.join(ESCAPE_CHARS))
 
 # For the back slash, create a regular expression
 # that matches all of the following criteria
@@ -35,7 +35,7 @@ ESCAPE_CHARS_OR = r'[{}\\]'.format(ESCAPE_CHARS)
 # 3) the second characters is a backslash
 # 4) the third character is none of the ESCAPE_CHARS,
 #       and is also not a backslash
-REGEX_BACKSLASH = re.compile(r'(?!\\)\\(?!{})'.format(ESCAPE_CHARS_OR))
+REGEX_BACKSLASH = re.compile(r'(?<!\\)\\(?!{})'.format(ESCAPE_CHARS_OR))
 
 ######################################################################
 # Declare module functions
