@@ -15,8 +15,8 @@ NAME_FILE = os.path.basename(PATH_FILE)
 # Define helper functions
 #######################################################################
 def ls_and_split(directory):
-    stdout, stderr = check_output_cwd(['ls'], directory)
-    return stdout.decode().split('\n')
+    stdout = check_output_cwd(['ls'], directory)
+    return stdout
 
 #######################################################################
 # Main class
