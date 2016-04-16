@@ -17,11 +17,12 @@ ESCAPE_CHARS = [r'\&', '%', r'\$', '#', '_', r'\{', r'\}', '~', r'\^', ]
 
 # For each latex escape character, create a regular expression
 # that matches all of the following criteria
-# 1) two characters
-# 2) the first character is NOT a backslash ( "\" )
-# 3) the second character is one of the latex escape characters
+# 1) one or two characters
+# 2) if two characters, the first character is NOT a backslash ( "\" )
+# 3) if two characters, the second, if one, the first character
+#       is one of the latex escape characters
 REGEX_ESCAPE_CHARS = [
-        (re.compile(r"(?<=[^\\])" + i), r"\\" + i.replace('\\', ''))
+        (re.compile(r"(?<!\\)" + i), r"\\" + i.replace('\\', ''))
         for i in ESCAPE_CHARS
         ]
 
