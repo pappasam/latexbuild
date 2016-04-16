@@ -31,9 +31,9 @@ ESCAPE_CHARS_OR = r'[{}\\]'.format(''.join(ESCAPE_CHARS))
 
 # For the back slash, create a regular expression
 # that matches all of the following criteria
-# 1) three characters
+# 1) one, two, or three characters
 # 2) the first character is not a backslash
-# 3) the second characters is a backslash
+# 3) the second character is a backslash
 # 4) the third character is none of the ESCAPE_CHARS,
 #       and is also not a backslash
 REGEX_BACKSLASH = re.compile(r'(?<!\\)\\(?!{})'.format(ESCAPE_CHARS_OR))
