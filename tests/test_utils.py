@@ -5,6 +5,7 @@ from latexbuild.utils import (
         random_name_filepath,
         list_filepathes_with_predicate,
         read_file,
+        recursive_apply,
         )
 
 PATH_FILE = os.path.abspath(__file__)
@@ -83,6 +84,32 @@ class TestReadFile(unittest.TestCase):
     '''Test class for read_file'''
     '''This function is too simple to warrant testing at this time'''
     pass
+
+class TestRecursiveApply(unittest.TestCase):
+    '''Test class for recursive_apply'''
+
+    def test_nested_objects(self):
+        inval = {
+                'hello': {'man': 'woman', 'dog': 'cat'},
+                'world': 'smartiepants',
+                'brownie': [
+                    'flower',
+                    {'sugar': 'bad'},
+                    'chocolate',
+                    ]
+                }
+        expected_outval = {
+                'hello': {'man': 'womanTEST', 'dog': 'catTEST'},
+                'world': 'smartiepantsTEST',
+                'brownie': [
+                    'flowerTEST',
+                    {'sugar': 'badTEST'},
+                    'chocolateTEST',
+                    ]
+                }
+        func = lambda s: s + 'TEST'
+        actual_outval = recursive_apply(inval, lambda s: s + 'TEST')
+        self.assertEqual(actual_outval, expected_outval)
 
 if __name__ == '__main__':
     unittest.main()

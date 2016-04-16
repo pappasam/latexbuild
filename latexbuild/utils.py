@@ -40,3 +40,16 @@ def read_file(filepath):
     with open(filepath, 'r') as file_to_read:
         content = file_to_read.read()
     return content
+
+def recursive_apply(inval, func):
+    '''Recursively apply a function to all levels of nested iterables
+
+    :param inval: the object to run the function on
+    :param func: the function that will be run on the inval
+    '''
+    if isinstance(inval, dict):
+        return {k: recursive_apply(v, func) for k, v in inval.items()}
+    elif isinstance(inval, list):
+        return [recursive_apply(v, func) for v in inval]
+    else:
+        return func(inval)
