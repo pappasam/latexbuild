@@ -86,8 +86,8 @@ class LatexBuild(object):
             old_aux, new_aux = random_str_uuid(1), random_str_uuid(2)
             while old_aux != new_aux:
                 # Run the relevant Latex command until old aux != new aux
-                stdout, stderr = check_output_cwd(cmd, path_template_dir)
-                LOGGER.debug(stdout)
+                stdout = check_output_cwd(cmd, path_template_dir)
+                LOGGER.debug('\n'.join(stdout))
                 old_aux, new_aux = new_aux, read_file(path_template_random_aux)
             shutil.move(path_outfile_initial, path_outfile)
             LOGGER.info("Built {} from {}".format(

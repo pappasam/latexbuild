@@ -13,3 +13,6 @@ __pycache__/
 
 # Tests
 .coverage
+
+# Random build files
+*.pdf
