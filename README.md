@@ -2,7 +2,7 @@
 
 This is a recent effort at writing a very light Latex build wrapper for Python 3 using Jinja2 templates. It was inspired by the build philosophy found in http://pythonhosted.org/latex/ . However, the original latex library made it difficult to do complex, non-pdf builds (such as compiling to HTML). This repository creates simple components that can be used to build Latex from Jinja2 templates without losing control of the lower-level command line tools provided with latex (like pdflatex and htlatex). The usefulness of the library is split into two components:
 
-1. Rendering Jinaj2 templates for Latex
+1. Rendering Jinja2 templates for Latex
 1. Compiling the rendered template with Latex
 
 ## Installation

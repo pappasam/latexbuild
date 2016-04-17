@@ -11,7 +11,7 @@ the lower-level command line tools provided with latex (like pdflatex
 and htlatex). The usefulness of the library is split into two
 components:
 
-1. Rendering Jinaj2 templates for Latex
+1. Rendering Jinja2 templates for Latex
 2. Compiling the rendered template with Latex
 
 Installation
