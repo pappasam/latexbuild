@@ -13,7 +13,7 @@ with open(FILE_README, 'r') as readme:
 
 setup(
         name='latexbuild',
-        version='0.1.0',
+        version='0.1.1',
         description='Building Jinja2 templates with latex',
         long_description=long_description,
         url='https://github.com/pappasam/latexbuild',
