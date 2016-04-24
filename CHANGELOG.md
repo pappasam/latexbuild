@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2016-04-24
+
+* Change DOCX build process to first build PDF to generate complete aux file THEN run laetx2rtf.
+
 ## [0.2.0] - 2016-04-24
 
 * Added support for building Microsoft Word (.docx) files using latex2rtf

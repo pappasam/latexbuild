@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
+\newcounter{session}
 
 \title{\BLOCK{block title}\BLOCK{endblock}}
 \author{\vspace{-5ex}}
@@ -33,6 +34,15 @@ This contains an unordered list of the same cool things that were passed as a py
 
 \section*{Conclusion}
 
-You can do a lot with Jinja2 + Latex, and latexbuild makes all this easy.
+You can do a lot with Jinja2 + Latex, and latexbuild makes all this easy. I will end with a counter.
+
+Counter begins here: \\
+\setcounter{session}{0}
+\arabic{session} \\
+\arabic{session} \\
+\arabic{session} \\
+\arabic{session} \\
+\arabic{session} \\
+\arabic{session} \\
 
 \end{document}
