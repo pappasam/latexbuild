@@ -14,6 +14,17 @@ components:
 1. Rendering Jinja2 templates for Latex
 2. Compiling the rendered template with Latex
 
+Currently, the following output formats are supported out of the box:
+
+1. .pdf
+2. .html
+3. .docx
+
+That said, given the granular control offered by this package, as long
+as you stick with formats that are supported by build tools distributed
+with texlive, you should be able to easily write your own output format
+extensions using this package as a base.
+
 Installation
 ------------
 
@@ -152,17 +163,19 @@ repository with the following code:
 
 .. code:: python
 
-    from latexbuild import build_pdf, build_html, render_latex_template
+    from latexbuild import build_pdf, build_html, build_docx, render_latex_template
 
     PATH_JINJA2 = "/path/to/your/latex/jinja2/root"
     PATH_TEMPLATE_RELATIVE_TO_PATH_JINJA2 = "template/filepath.tex"
     PATH_OUTPUT_PDF = "/path/to/your/output/directory/MYOUTPUTFILE.pdf"
     PATH_OUTPUT_HTML = "/path/to/your/output/directory/MYOUTPUTFILE.html"
+    PATH_OUTPUT_DOCX = "/path/to/your/output/directory/MYOUTPUTFILE.docx"
 
     # Build Jinja2 template, compile result latex, move compiled file to output path,
     # and clean up all intermediate files
     build_pdf(PATH_JINJA2, PATH_TEMPLATE_RELATIVE_TO_PATH_JINJA2, PATH_OUTPUT_PDF)
     build_html(PATH_JINJA2, PATH_TEMPLATE_RELATIVE_TO_PATH_JINJA2, PATH_OUTPUT_HTML)
+    build_docx(PATH_JINJA2, PATH_TEMPLATE_RELATIVE_TO_PATH_JINJA2, PATH_OUTPUT_DOCX)
 
     # If you just want the rendered template's text in a python variable,
     # do the following (assuming you have no variables to pass):
