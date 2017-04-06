@@ -41,9 +41,11 @@ REGEX_BACKSLASH = re.compile(r'(?<!\\)\\(?!{})'.format(ESCAPE_CHARS_OR))
 ######################################################################
 # Declare module functions
 ######################################################################
-def escape_latex_str(string_text):
+def escape_latex_str_if_str(value):
     '''Escape a latex string'''
+    if not isinstance(value, str):
+        return value
     for regex, replace_text in REGEX_ESCAPE_CHARS:
-        string_text = re.sub(regex, replace_text, string_text)
-    string_text = re.sub(REGEX_BACKSLASH, r'\\\\', string_text)
-    return string_text
+        value = re.sub(regex, replace_text, value)
+    value = re.sub(REGEX_BACKSLASH, r'\\\\', value)
+    return value
