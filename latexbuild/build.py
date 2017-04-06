@@ -78,6 +78,15 @@ class LatexBuild(object):
         ext_outfile = os.path.splitext(path_outfile)[-1]
         path_outfile_initial = "{}{}".format(
                 path_template_random_no_ext, ext_outfile)
+
+        # Handle special case of MS Word
+        if cmd_wo_infile[0] == 'latex2rtf' and len(cmd_wo_infile) == 1:
+            cmd_docx = cmd_wo_infile + ['-o', path_outfile_initial]
+            # Need to run pdf2latex to generate aux file
+            cmd_wo_infile = ['pdflatex']
+        else:
+            cmd_docx = None
+
         try:
             # Write template variable to a temporary file
             with open(path_template_random, 'w') as temp_file:
@@ -89,6 +98,13 @@ class LatexBuild(object):
                 stdout = check_output_cwd(cmd, path_template_dir)
                 LOGGER.debug('\n'.join(stdout))
                 old_aux, new_aux = new_aux, read_file(path_template_random_aux)
+
+            # Handle special case of MS Word
+            if cmd_docx:
+                cmd_word = cmd_docx + [path_template_random]
+                stdout = check_output_cwd(cmd_word, path_template_dir)
+                LOGGER.debug('\n'.join(stdout))
+
             shutil.move(path_outfile_initial, path_outfile)
             LOGGER.info("Built {} from {}".format(
                 path_outfile, self.path_template))
@@ -123,3 +139,7 @@ class LatexBuild(object):
         '''
         assertions.has_file_extension(path_outfile, '.html')
         return self.run_latex(['htlatex'], path_outfile)
+
+    def build_docx(self, path_outfile):
+        assertions.has_file_extension(path_outfile, '.docx')
+        return self.run_latex(['latex2rtf'], path_outfile)
