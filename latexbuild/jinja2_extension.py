@@ -41,7 +41,7 @@ def render_latex_template(path_templates, template_filename,
         defaults to None for case when no values need to be passed
     '''
     var_dict = template_vars if template_vars else {}
-    var_dict_escape = recursive_apply(var_dict, escape_latex_str)
+    var_dict_escape = recursive_apply(var_dict, lambda s: escape_latex_str(s) if isinstance(s, str) else s)
     j2_env = jinja2.Environment(
             loader=jinja2.FileSystemLoader(path_templates), **J2_ARGS
             )
