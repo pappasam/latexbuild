@@ -1,0 +1,63 @@
+% Parent template for Couse Outlines
+% Child templates inherit from this template
+% --------------------------
+% Required blocks, in order
+% for child documents
+% --------------------------
+% title
+% instructor_name
+% course_description
+% learning_outcomes
+% --------------------------
+\documentclass[12pt]{article}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+
+\title{\BLOCK{block title}\BLOCK{endblock}}
+\author{\vspace{-5ex}}
+\date{\vspace{-5ex}}
+
+\begin{document}
+
+\maketitle
+
+\section*{General Course Information}
+% Instructor: insert your name here
+% Email: ?????@domain.com
+% Office Hours: if applicable, indicate dates and times (including time zone), method (e.g. phone, web-based meeting tool, etc.), and method for arranging appointments.
+
+% Semester of the Course
+% Dates of the Course
+Instructor: \BLOCK{block instructor_name}\BLOCK{endblock} \\
+Email: \BLOCK{block instructor_email}\BLOCK{endblock} \\
+Semester of the course: Summer 2016 \\
+Dates of the course: \BLOCK{block start_date}\BLOCK{endblock} -- \BLOCK{block end_date}\BLOCK{endblock}
+
+\section*{Course Description}
+\BLOCK{block course_description}\BLOCK{endblock}
+
+\section*{Course Prerequisites}
+\BLOCK{block prerequisites}\BLOCK{endblock}
+
+\section*{Course Structure/Method}
+Lecture / Lab. \BLOCK{block structure_method}\BLOCK{endblock}
+
+\section*{Course Learning Outcomes}
+
+Upon successful completion of this course, students will be able to:
+\begin{enumerate}
+\BLOCK{block learning_outcomes}\BLOCK{endblock}
+\end{enumerate}
+
+\section*{Communication Policy}
+
+The best way to contact me is via email.
+
+\section*{Assessment Strategy and Grading Policy}
+
+\BLOCK{block assessment}\BLOCK{endblock}
+
+\newpage
+
+\section*{At the discretion of the instructor, the syllabus may be modified to better meet the needs of the students and to achieve the learning outcomes established in the syllabus.}
+
+\end{document}
