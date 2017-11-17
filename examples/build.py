@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-from latexbuild import build_pdf, render_latex_template
+from latexbuild import build_pdf
 
 PATH_THIS = os.path.dirname(os.path.abspath(__file__))
 PATH_JINJA2 = os.path.join(PATH_THIS, 'templates')
