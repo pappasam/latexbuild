@@ -1,5 +1,5 @@
 # Actual project dependencies
-Jinja2==2.8
+Jinja2==2.10.1
 
 # Linting tools
 flake8==2.5.4
