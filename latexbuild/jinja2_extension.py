@@ -31,7 +31,7 @@ J2_ARGS = {
 # Declare module functions
 ######################################################################
 def render_latex_template(path_templates, template_filename,
-        template_vars=None):
+        template_vars=None, filters=None):
     '''Render a latex template, filling in its template variables
 
     :param path_templates: the path to the template directory
@@ -39,11 +39,15 @@ def render_latex_template(path_templates, template_filename,
         of the desired template for rendering
     :param template_vars: dictionary of key:val for jinja2 variables
         defaults to None for case when no values need to be passed
+    :param filters: dictionary of key:val for jinja2 filters
+        defaults to None for case when no values need to be passed
     '''
     var_dict = template_vars if template_vars else {}
     var_dict_escape = recursive_apply(var_dict, escape_latex_str_if_str)
     j2_env = jinja2.Environment(
             loader=jinja2.FileSystemLoader(path_templates), **J2_ARGS
             )
+    if filters:
+        j2_env.filters.update(filters)
     template = j2_env.get_template(template_filename)
     return template.render(**var_dict_escape)
